@@ -3,14 +3,14 @@ import Notiflix from 'notiflix';
 const form = document.querySelector('.form');
 
 function createPromise(position, delay) {
-  const dataInfo = {position, delay, };
+  const dataInfo = {position, delay};
   const shouldResolve = Math.random() > 0.3;
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        resolve(dataInfo);
+        resolve(dataInfo)
       } else {
-        reject(dataInfo);
+        reject(dataInfo)
       }
     }, delay);
   });
@@ -29,13 +29,11 @@ function handleSubmit(event) {
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
-        );
-      })
-      .catch(({ position, delay }) => {
+        )} )
+      .catch(({position, delay}) => {
         Notiflix.Notify.failure(
           `❌ Rejected promise ${position} in ${delay}ms`
-        );
-      });
+        )});
     delay += step;
   }
   form.reset();
