@@ -3,14 +3,14 @@ import Notiflix from 'notiflix';
 const form = document.querySelector('.form');
 
 function createPromise(position, delay) {
-  const dataInfo = {position, delay, };
+  // const dataInfo = {position, delay, };
   const shouldResolve = Math.random() > 0.3;
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        resolve(dataInfo);
+        resolve(position, delay);
       } else {
-        reject(dataInfo);
+        reject(position, delay,);
       }
     }, delay);
   });
