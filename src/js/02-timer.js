@@ -10,9 +10,9 @@ const minutesCounter = document.querySelector('[data-minutes]');
 const secondsCounter = document.querySelector('[data-seconds]');
 
 const currentTime = Date.now();
-startBtn.disabled = true;
 let selectedDate = null;
 let intervalId = null;
+startBtn.disabled = true;
 
 const options = {
   enableTime: true,
